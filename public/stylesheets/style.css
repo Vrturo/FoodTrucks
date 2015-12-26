@@ -1,16 +1,16 @@
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
-
-#map {
-  height: 50%;
-  width: 50%
+html, body, #map-canvas {
+      height: 100%;
+      width: 80%;
+      margin: 0px;
+      padding: 0px;
+      }
+#panel {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  margin-left: -180px;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
 }

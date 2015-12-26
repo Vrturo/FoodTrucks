@@ -3,3 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  #map
+
+  script async defer
+    src=("https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_API_KEY']}&callback=initMap")

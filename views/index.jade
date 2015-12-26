@@ -1,10 +1,12 @@
 extends layout
 
 block content
+  meta(name="viewport" content="initial-scale=1.0")
+  meta(charset="utf-8")
   h1= title
   p Welcome to #{title}
   #location hello
   #map
 
-  //- script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFaifuWi-19rCAy3rrjrPeJZyJ4BM76T4&callback=initMap")
+  script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFaifuWi-19rCAy3rrjrPeJZyJ4BM76T4&callback=initMap")
 

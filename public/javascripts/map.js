@@ -32,3 +32,5 @@ function addMarker() {
   iterator++;
 }
 google.maps.event.addDomListener(window, 'load', initialize);
+
+

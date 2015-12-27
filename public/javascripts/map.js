@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var marker = new google.maps.Marker({
       position: map.getCenter(),
       draggable: false,
-      map: map
+      map: map,
+      animation: google.maps.Animation.DROP
     });
   }
 

@@ -19,15 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
       center:{lat: lat, lng: lng}
     };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  }
-  function addMarker() {
-    markers.push(new google.maps.Marker({
-      position: map,
-      map: map,
+  var marker = new google.maps.Marker({
+      position: map.getCenter(),
       draggable: false,
-      animation: google.maps.Animation.DROP
-    }));
-    iterator++;
+      map: map
+    });
   }
 
   getLocation();

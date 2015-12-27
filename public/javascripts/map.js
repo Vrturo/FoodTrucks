@@ -1,3 +1,19 @@
+document.addEventListener('DOMContentLoaded', function () {
+  var location = document.getElementById("location");
+  function showPosition(position) {
+      location.innerHTML = "Latitude: " + position.coords.latitude +
+      "<br>Longitude: " + position.coords.longitude;
+  };
+  function getLocation() {
+      if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+          location.innerHTML = "Geolocation is not supported by this browser.";
+      }
+  };
+  getLocation();
+});
+
 var berlin = new google.maps.LatLng(52.520816, 13.410186);
 var neighborhoods = [
     new google.maps.LatLng(52.511467, 13.447179),

@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
           var li = document.createElement("li");
           li.className = "foodTruck";
           li.innerHTML =
-            "Food Service: " + objArr[i].applicant +
-            "<br>Adress: " + objArr[i].address +
-            "<br>Schedule: " + objArr[i].dayshours +
-            "<br>Food: " + objArr[i].fooditems;
+            "<h3>" + objArr[i].applicant +"</h3>" +
+            "<strong>Address</strong>: " + objArr[i].address +
+            "<br><strong>Schedule</strong>: " + objArr[i].dayshours +
+            "<br><strong>Food</strong>: " + objArr[i].fooditems + "<br>";
           ol.appendChild(li);
         }; // for
     }; // if

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
           location.innerHTML = "Geolocation is not supported by this browser.";
       }
   };
+
   var map;
   function initialize(lat, lng) {
       var mapOptions = {
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
       position: map.getCenter(),
       draggable: false,
       map: map,
+      icon: "http://www.4smileys.com/smileys/food-smileys/hungry_boy.gif",
       animation: google.maps.Animation.DROP
     });
   }

@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
       for (i = 0; i < obj.length; i++) {
         objArr.push(obj[i]);
       }
-      console.log(objArr);
-    document.getElementById("data").innerHTML = request.responseText;
+      console.log(objArr[0].address);
+    document.getElementById("data").innerHTML =
+      "Food Service: " + objArr[0].applicant +
+      "<br>Adress: " + objArr[0].address +
+      "<br>Schedule: " + objArr[0].dayshours +
+      "<br>Food: " + objArr[0].fooditems
   };
 });

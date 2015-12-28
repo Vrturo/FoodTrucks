@@ -14,3 +14,6 @@ html, body, #map-canvas {
   padding: 5px;
   border: 1px solid #999;
 }
+#data{
+  height: 50%;
+}

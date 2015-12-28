@@ -23,3 +23,4 @@ The Backend was written in Node.
 ### Resources
 - http://www.sitepoint.com/guide-vanilla-ajax-without-jquery/
 - http://www.w3schools.com/xml/dom_httprequest.asp
+- http://callmenick.com/post/jquery-functions-javascript-equivalents

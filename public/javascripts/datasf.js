@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
   request.onreadystatechange = function () {
     if (request.readyState != 4 || request.status != 200) return;
       obj = JSON.parse(request.responseText);
+      objArr = []
       for (i = 0; i < obj.length; i++) {
-        console.log(obj[i]);
+        objArr.push(obj[i]);
       }
+      console.log(objArr);
     document.getElementById("data").innerHTML = request.responseText;
   };
 });

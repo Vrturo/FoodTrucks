@@ -4,7 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
   request.send();
   request.onreadystatechange = function () {
     if (request.readyState != 4 || request.status != 200) return;
-    console.log(request.responseText);
+      obj = JSON.parse(request.responseText);
+      for (i = 0; i < obj.length; i++) {
+        console.log(obj[i]);
+      }
     document.getElementById("data").innerHTML = request.responseText;
   };
 });

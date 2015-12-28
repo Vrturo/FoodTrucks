@@ -5,6 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
   request.onreadystatechange = function () {
     if (request.readyState != 4 || request.status != 200) return;
     console.log(request.responseText);
-  };
     document.getElementById("data").innerHTML = request.responseText;
+  };
 });

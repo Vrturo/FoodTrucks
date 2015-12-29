@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
         icon: "http://www.4smileys.com/smileys/food-smileys/hungry_boy.gif",
         animation: google.maps.Animation.DROP
       });
+
+    // set geocode so we can identify truck stops with address
     var geocoder = new google.maps.Geocoder();
     var showTrucks = document.getElementById("showTrucks");
     showTrucks.addEventListener('click', function(e){
@@ -34,24 +36,25 @@ document.addEventListener('DOMContentLoaded', function () {
       geocodeAddress(geocoder, map);
     });
   }
+
   function geocodeAddress(geocoder, resultsMap) {
-          for (i = 0; i < objArr.length; i++) {
-            var address = JSON.stringify(objArr[i].address)
-            geocoder.geocode({'address': address}, function(results, status) {
-              if (status === google.maps.GeocoderStatus.OK) {
-                console.log(results[0].formatted_address);
-                resultsMap.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
-                  map: resultsMap,
-                  position: results[0].geometry.location,
-                  icon: "http://www.localsconnected.com/wp-content/uploads/2014/11/Food-Truck-Icon.png",
-                  draggable: false,
-                  map: map,
-                });
-              };
-            });
-          }; // for
-        }; // geocode
+    for (i = 0; i < objArr.length; i++) {
+      var address = JSON.stringify(objArr[i].address)
+      geocoder.geocode({'address': address}, function(results, status) {
+        if (status === google.maps.GeocoderStatus.OK) {
+          console.log(results[0].formatted_address);
+          resultsMap.setCenter(results[0].geometry.location);
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location,
+            icon: "http://www.localsconnected.com/wp-content/uploads/2014/11/Food-Truck-Icon.png",
+            draggable: false,
+            map: map,
+          });
+        }; // if
+      }); // geocode
+    }; // for
+  }; // geocodeAddress
 
   getLocation();
 });

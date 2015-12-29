@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function geocodeAddress(geocoder, resultsMap) {
     for (i = 0; i < objArr.length; i++) {
+      var name = objArr[i].applicant
       var address = JSON.stringify(objArr[i].address + " San Francisco, CA");
       geocoder.geocode({'address': address}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
@@ -60,8 +61,9 @@ document.addEventListener('DOMContentLoaded', function () {
           marker.addListener('click', function() {
             infowindow.open(map, marker);
           });
+          console.log(results[0]);
           var infowindow = new google.maps.InfoWindow({
-              content: '<h3>' + results[0]["address_components"][0]["long_name"] + '</h3>'
+              content: '<h3>' + name + '</h3>'
           });
 
         }; // if

@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 resultsMap.setCenter(results[0].geometry.location);
                 var marker = new google.maps.Marker({
                   map: resultsMap,
-                  position: results[0].formatted_address.geometry.location,
+                  position: results[0].geometry.location,
                   icon: "http://howtostartafoodtruckbusinessinindia.com/wp-content/uploads/foodtruck-icon-web.png",
                   draggable: false,
                   map: map,

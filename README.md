@@ -17,7 +17,7 @@ The Backend was written in Node.
 
 ### Challenges
 - trying not to use jQuery
-- learning jade
+- not too familiar with jade
 
 
 ### Resources

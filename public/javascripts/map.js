@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var marker = new google.maps.Marker({
                   map: resultsMap,
                   position: results[0].geometry.location,
-                  icon: "http://howtostartafoodtruckbusinessinindia.com/wp-content/uploads/foodtruck-icon-web.png",
+                  icon: "http://www.localsconnected.com/wp-content/uploads/2014/11/Food-Truck-Icon.png",
                   draggable: false,
                   map: map,
                 });

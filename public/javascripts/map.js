@@ -56,6 +56,14 @@ document.addEventListener('DOMContentLoaded', function () {
             map: map,
             animation: google.maps.Animation.DROP
           });
+          // add listener to click on marker
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+          var infowindow = new google.maps.InfoWindow({
+              content: '<h3>' + results[0]["address_components"][0]["long_name"] + '</h3>'
+          });
+
         }; // if
       }); // geocode
     }; // for

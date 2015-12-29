@@ -25,3 +25,5 @@ The Backend was written in Node.
 - http://www.w3schools.com/xml/dom_httprequest.asp
 - http://callmenick.com/post/jquery-functions-javascript-equivalents
 - http://zeke.sikelianos.com/javascript/
+- https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple
+- https://developers.google.com/maps/documentation/javascript/tutorial

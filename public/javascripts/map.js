@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var address = JSON.stringify(objArr[i].address)
       geocoder.geocode({'address': address}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
-          console.log(results[0].formatted_address);
           resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,
@@ -57,6 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }; // geocodeAddress
 
   getLocation();
-});
+}); // document
 
 

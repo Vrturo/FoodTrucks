@@ -1,10 +1,15 @@
+// equivilant to $(document).ready
 document.addEventListener('DOMContentLoaded', function () {
+
+  // displays location from the getlocation function
   var location = document.getElementById("location");
   function showPosition(position) {
       location.innerHTML = "Latitude: " + position.coords.latitude +
       "<br>Longitude: " + position.coords.longitude;
     initialize(position.coords.latitude, position.coords.longitude);
   };
+
+  // html5 gets geo location
   function getLocation() {
       if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(showPosition);
@@ -12,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
           location.innerHTML = "Geolocation is not supported by this browser.";
       }
   };
-
+  // initializing google maps
   var map;
   function initialize(lat, lng) {
       var mapOptions = {
@@ -39,8 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function geocodeAddress(geocoder, resultsMap) {
     for (i = 0; i < objArr.length; i++) {
-      var address = JSON.stringify(objArr[i].address + " San Francisco, CA")
-      console.log(address)
+      var address = JSON.stringify(objArr[i].address + " San Francisco, CA");
       geocoder.geocode({'address': address}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
           // resultsMap.setCenter(results[0].geometry.location);
@@ -50,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
             icon: "http://www.localsconnected.com/wp-content/uploads/2014/11/Food-Truck-Icon.png",
             draggable: false,
             map: map,
+            animation: google.maps.Animation.DROP
           });
         }; // if
       }); // geocode

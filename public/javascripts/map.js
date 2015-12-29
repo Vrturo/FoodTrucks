@@ -39,10 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function geocodeAddress(geocoder, resultsMap) {
     for (i = 0; i < objArr.length; i++) {
-      var address = JSON.stringify(objArr[i].address)
+      var address = JSON.stringify(objArr[i].address + " San Francisco, CA")
+      console.log(address)
       geocoder.geocode({'address': address}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
-          resultsMap.setCenter(results[0].geometry.location);
+          // resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,
             position: results[0].geometry.location,

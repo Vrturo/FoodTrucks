@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (i = 0; i < objArr.length; i++) {
       var name = objArr[i].applicant;
       var address = objArr[i].address;
+      var fooditems = objArr[i].fooditems;
       var addressString = JSON.stringify(objArr[i].address + " San Francisco, CA");
       geocoder.geocode({'address': addressString}, function(results, status) {
         if (status === google.maps.GeocoderStatus.OK) {
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
           console.log(results[0]);
           var infowindow = new google.maps.InfoWindow({
               content: '<h3>' + name + '</h3>' +
-                       address + '<br>' +
+                       address + '<br>' + fooditems
 
           });
 

@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
   // displays location from the getlocation function
   var location = document.getElementById("location");
   function showPosition(position) {
-      location.innerHTML = "Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude;
     initialize(position.coords.latitude, position.coords.longitude);
   };
 
@@ -44,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function geocodeAddress(geocoder, resultsMap) {
     for (i = 0; i < objArr.length; i++) {
+      console.log(objArr[i].address);
       var name = objArr[i].applicant;
       var dayshours = objArr[i].dayshours;
       var address = objArr[i].address;

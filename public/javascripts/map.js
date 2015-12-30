@@ -66,9 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
           });
           console.log(results[0]);
           var infowindow = new google.maps.InfoWindow({
-              content: '<h3>' + name + '</h3>' +
-                       address + '<br>' + fooditems +
-                       '<br>' + dayshours
+              content: '<h3><strong>' + name + '</strong></h3>' +
+                       '<strong>Address: </strong>' + address + '<br>' +
+                       '<br><strong>Food</strong>: ' + fooditems +
+                       '<br><strong>Schedule:</strong> ' + dayshours
 
           });
 

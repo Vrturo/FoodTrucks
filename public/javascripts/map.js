@@ -64,10 +64,9 @@ document.addEventListener('DOMContentLoaded', function () {
           marker.addListener('click', function() {
             infowindow.open(map, marker);
           });
-          console.log(results[0]);
           var infowindow = new google.maps.InfoWindow({
               content: '<h3><strong>' + name + '</strong></h3>' +
-                       '<strong>Address: </strong>' + address + '<br>' +
+                       '<strong>Address: </strong>' + address +
                        '<br><strong>Food</strong>: ' + fooditems +
                        '<br><strong>Schedule:</strong> ' + dayshours
 

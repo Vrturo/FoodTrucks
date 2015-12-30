@@ -3,6 +3,16 @@ extends layout
 
 block content
   #location Coordinates
+  form
+    div.input
+      input(type="radio", name="RadioGroup")
+      label  Hotdog
+    div.input
+      input(type="radio", name="RadioGroup")
+      label  Indian
+    div.input
+      input(type="radio", name="RadioGroup")
+      label  Bacon
   #map-canvas
   h1#data Food Trucks
   button#showTrucks Show Nearby Trucks

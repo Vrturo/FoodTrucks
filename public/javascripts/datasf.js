@@ -5,24 +5,21 @@ document.addEventListener('DOMContentLoaded', function () {
   request.onreadystatechange = function () {
     if (request.readyState != 4 || request.status != 200) return;
         // if api call goes through parse the long string and push each object into an array
-        obj = JSON.parse(request.responseText);
-        objArr = []
+        objArr = JSON.parse(request.responseText);
         unique = []
         uniqueArr = []
 
+        // The native method filter will loop through the array and leave only those entries that pass the given callback function onlyUnique.
+        // onlyUnique checks, if the given value is the first occurring. If not, it must be a duplicate and will not be copied.
         function onlyUnique(value, index, self) {
           return self.indexOf(value) === index;
         }
 
-        for (i = 0; i < obj.length; i++) {
-          objArr.push(obj[i]);
-        }
+        // for (i = 0; i < obj.length; i++) {
+        //   unique.push(obj[i].applicant)
+        // uniqueArr.push(objArr.filter(onlyUnique));
+        // }
 
-        for (i = 0; i < obj.length; i++) {
-          unique.push(objArr[i].applicant)
-        }
-        uniqueArr.push(unique.filter(onlyUnique));
-        console.log(uniqueArr);
 
         // append only the attributes I need to the ordered list in the DOM
         var ol = document.getElementById("foodTrucksList");

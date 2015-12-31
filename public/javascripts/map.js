@@ -42,15 +42,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function geocodeAddress(geocoder, resultsMap) {
     for (i = 0; i < objArr.length; i++) {
-      console.log(objArr[i].address);
       var name = objArr[i].applicant;
       var dayshours = objArr[i].dayshours;
       var address = objArr[i].address;
       var fooditems = objArr[i].fooditems;
+      var contentString = '<h3><strong>' + name + '</strong></h3>' +
+                       '<strong>Address: </strong>' + address +
+                       '<br><strong>Food</strong>: ' + fooditems +
+                       '<br><strong>Schedule:</strong> ' + dayshours;
       var addressString = JSON.stringify(objArr[i].address + " San Francisco, CA");
       geocoder.geocode({'address': addressString}, function(results, status) {
+        console.log(status);
         if (status === google.maps.GeocoderStatus.OK) {
-          // resultsMap.setCenter(results[0].geometry.location);
           var marker = new google.maps.Marker({
             map: resultsMap,
             position: results[0].geometry.location,
@@ -59,18 +62,14 @@ document.addEventListener('DOMContentLoaded', function () {
             map: map,
             animation: google.maps.Animation.DROP
           });
+          // console.log(results);
           // add listener to click on marker
           marker.addListener('click', function() {
             infowindow.open(map, marker);
           });
           var infowindow = new google.maps.InfoWindow({
-              content: '<h3><strong>' + name + '</strong></h3>' +
-                       '<strong>Address: </strong>' + address +
-                       '<br><strong>Food</strong>: ' + fooditems +
-                       '<br><strong>Schedule:</strong> ' + dayshours
-
+              content: contentString
           });
-
         }; // if
       }); // geocode
     }; // for

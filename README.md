@@ -18,6 +18,7 @@ The Backend was written in Node.
 ### Challenges
 - trying not to use jQuery
 - not too familiar with jade
+- having 700 + objects and hitting the google maps 10 per second query limit (OVER_QUERY_LIMIT)
 
 
 ### Resources

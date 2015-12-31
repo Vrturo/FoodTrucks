@@ -19,7 +19,7 @@ The Backend was written in Node.
 - trying not to use jQuery
 - not too familiar with jade
 - having 700 + objects and hitting the google maps 10 per second query limit (OVER_QUERY_LIMIT)
-
+- Attaching parameters with javascript closures to default parameters in anonymous functions
 
 ### Resources
 - http://www.sitepoint.com/guide-vanilla-ajax-without-jquery/
@@ -28,3 +28,4 @@ The Backend was written in Node.
 - http://zeke.sikelianos.com/javascript/
 - https://developers.google.com/maps/documentation/javascript/examples/geocoding-simple
 - https://developers.google.com/maps/documentation/javascript/tutorial
+- http://stackoverflow.com/questions/3978806/attaching-parameters-with-javascript-closures-to-default-parameters-in-anonymous

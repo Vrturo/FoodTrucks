@@ -40,8 +40,45 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+//   function geocodeAddress(geocoder, resultsMap) {
+//     for (i = 0; i < objArr.length; i++) {
+//       var name = objArr[i].applicant;
+//       var dayshours = objArr[i].dayshours;
+//       var address = objArr[i].address;
+//       var fooditems = objArr[i].fooditems;
+//       var contentString = '<h3><strong>' + name + '</strong></h3>' +
+//                        '<strong>Address: </strong>' + address +
+//                        '<br><strong>Food</strong>: ' + fooditems +
+//                        '<br><strong>Schedule:</strong> ' + dayshours;
+//       var addressString = JSON.stringify(objArr[i].address + " San Francisco, CA");
+//       geocoder.geocode({'address': addressString}, function(results, status) {
+//         if (status === google.maps.GeocoderStatus.OK) {
+//           var marker = new google.maps.Marker({
+//             map: resultsMap,
+//             position: results[0].geometry.location,
+//             icon: "http://www.localsconnected.com/wp-content/uploads/2014/11/Food-Truck-Icon.png",
+//             draggable: false,
+//             map: map,
+//             animation: google.maps.Animation.DROP
+//           });
+//           // console.log(results);
+//           // add listener to click on marker
+//           marker.addListener('click', function() {
+//             infowindow.open(map, marker);
+//           });
+//           var infowindow = new google.maps.InfoWindow({
+//               content: contentString
+//           });
+//         }; // if
+//       }); // geocode
+//     }; // for
+//   }; // geocodeAddress
+//   getLocation();
+// }); // document
+
   function geocodeAddress(geocoder, resultsMap) {
     for (i = 0; i < objArr.length; i++) {
+      (function(iter){
       var name = objArr[i].applicant;
       var dayshours = objArr[i].dayshours;
       var address = objArr[i].address;
@@ -51,31 +88,31 @@ document.addEventListener('DOMContentLoaded', function () {
                        '<br><strong>Food</strong>: ' + fooditems +
                        '<br><strong>Schedule:</strong> ' + dayshours;
       var addressString = JSON.stringify(objArr[i].address + " San Francisco, CA");
-      geocoder.geocode({'address': addressString}, function(results, status) {
-        console.log(status);
-        if (status === google.maps.GeocoderStatus.OK) {
-          var marker = new google.maps.Marker({
-            map: resultsMap,
-            position: results[0].geometry.location,
-            icon: "http://www.localsconnected.com/wp-content/uploads/2014/11/Food-Truck-Icon.png",
-            draggable: false,
-            map: map,
-            animation: google.maps.Animation.DROP
-          });
-          // console.log(results);
-          // add listener to click on marker
-          marker.addListener('click', function() {
-            infowindow.open(map, marker);
-          });
-          var infowindow = new google.maps.InfoWindow({
-              content: contentString
-          });
-        }; // if
-      }); // geocode
+        geocoder.geocode({'address': addressString}, function(results, status) {
+          if (status === google.maps.GeocoderStatus.OK) {
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location,
+              icon: "http://www.localsconnected.com/wp-content/uploads/2014/11/Food-Truck-Icon.png",
+              draggable: false,
+              map: map,
+              animation: google.maps.Animation.DROP
+            });
+            console.log(name);
+            // add listener to click on marker
+            marker.addListener('click', function() {
+              infowindow.open(map, marker);
+            });
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+          }; // if
+        }); // geocode
+      })(i);
     }; // for
   }; // geocodeAddress
-
   getLocation();
 }); // document
+
 
 

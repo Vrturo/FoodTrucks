@@ -7,10 +7,22 @@ document.addEventListener('DOMContentLoaded', function () {
         // if api call goes through parse the long string and push each object into an array
         obj = JSON.parse(request.responseText);
         objArr = []
+        unique = []
+        uniqueArr = []
+
+        function onlyUnique(value, index, self) {
+          return self.indexOf(value) === index;
+        }
+
         for (i = 0; i < obj.length; i++) {
           objArr.push(obj[i]);
         }
 
+        for (i = 0; i < obj.length; i++) {
+          unique.push(objArr[i].applicant)
+        }
+        uniqueArr.push(unique.filter(onlyUnique));
+        console.log(uniqueArr);
 
         // append only the attributes I need to the ordered list in the DOM
         var ol = document.getElementById("foodTrucksList");

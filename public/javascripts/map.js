@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var map;
   function initialize(lat, lng) {
       var mapOptions = {
-      zoom: 12,
+      zoom: 14,
       center:{lat: lat, lng: lng}
     };
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var infowindow = new google.maps.InfoWindow({
                 content: contentString
             });
+
           }; // if
         }); // geocode
       })(i); // return i so it saves accesss to object

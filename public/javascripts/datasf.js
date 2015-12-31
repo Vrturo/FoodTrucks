@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
           objArr.push(obj[i]);
         }
 
+
         // append only the attributes I need to the ordered list in the DOM
         var ol = document.getElementById("foodTrucksList");
         for (i = 0; i < objArr.length; i++){

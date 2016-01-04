@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (request.readyState != 4 || request.status != 200) return;
         // if api call goes through parse the long string and push each object into an array
         objArr = JSON.parse(request.responseText);
-        unique = []
         uniqueArr = []
 
         // The native method filter will loop through the array and leave only those entries that pass the given callback function onlyUnique.
@@ -15,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function () {
           return self.indexOf(value) === index;
         }
 
-        // for (i = 0; i < obj.length; i++) {
-        //   unique.push(obj[i].applicant)
-        // uniqueArr.push(objArr.filter(onlyUnique));
-        // }
+        for (i = 0; i < objArr.length; i++) {
+            objArr[i].applicant.filter(onlyUnique);
+        }
+
 
 
         // append only the attributes I need to the ordered list in the DOM
